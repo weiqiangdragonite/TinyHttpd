@@ -11,6 +11,7 @@
  * rewrite by <weiqiangdragonite@gmail.com>
  *
  * CGI未测试
+ * 多线程
  */
 
 
@@ -285,6 +286,7 @@ process_request(int clifd)
 	/* test if the last character is '/' */
 	if (path[strlen(path) - 1] == '/')
 		strcat(path, "index.html");
+	printf("path = %s\n", path);
 
 	if (stat(path, &st) == -1) {
 		/* error, cannot find the file on the path, or other error */
